@@ -1,9 +1,5 @@
 # Neural Network Back-Propagation Training System
 
-This project implements a fully-connected Artificial Neural Network trained using the **Back-Propagation** algorithm in C# (.NET 8). It mirrors the architecture and methodology presented in the reference document `BackProp.docx` (by Dr. James McCaffrey), as well as the experimental extensions outlined in the **WHAT TO DO** section: **Cross-Entropy Error** and **Weight Decay (L2 Regularization)**.
-
----
-
 ### Program Output (Baseline Run)
 
 ```text
@@ -118,9 +114,7 @@ Error signals work backward through the layers:
 
 ---
 
-## Extensions Implemented (From "WHAT TO DO")
-
-The instructions at the end of `BackProp.docx` specify two major enhancements:
+## Extensions Implemented
 
 ### 1. Cross-Entropy Error
 * **Theory**: In classification problems, Mean Squared Error combined with softmax can lead to sluggish learning when output neurons saturate (the derivative term $y_k(1 - y_k)$ approaches zero). By using Cross-Entropy loss ($E = -\sum t_k \ln(y_k)$), the derivative of the softmax loss neatly cancels the activation gradient, yielding an error signal directly proportional to the prediction error:
@@ -150,7 +144,6 @@ Running option `[4]` (`--all`) trains the three variants under identical seeds (
 
 ```
 backprop/
-├── BackProp.docx                       # Original reference document & assignment
 ├── BackPropProgram for CS345 IS 1.cs   # Original source file provided
 ├── .gitignore                          # Build and artifact exclusions
 ├── README.md                           # Documentation, execution guide & analysis
